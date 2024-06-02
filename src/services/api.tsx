@@ -1,4 +1,4 @@
-export default async function fetchEmployees() {
+export async function fetchEmployees() {
   try {
     const response = await fetch("http://localhost:3000/employees");
     if (!response.ok) {
