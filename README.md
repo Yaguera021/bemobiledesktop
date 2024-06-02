@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# Teste Técnico Front-end BeMobile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Construção de Tabela de Dados com React e Typescript
 
-Currently, two official plugins are available:
+### Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido como parte do Teste Técnico Front-end da Be, utilizando Vite, React e TypeScript para construir uma tabela de dados.
 
-## Expanding the ESLint configuration
+## Desafio 👨‍💻
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O desafio consiste em construir a visualização de uma tabela com dados que virão de uma API simulada, em json-server.
 
-- Configure the top-level `parserOptions` property like this:
+## Como Executar 🚀
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clone este repositório do GitHub em sua máquina: [https://github.com/Yaguera021/bemobile](https://github.com/Yaguera021/bemobile);
+2. Execute `npm install` para instalar as dependências.
+3. No diretório `bemobile/src/data`, execute `json-server db.json` para iniciar o json-server.
+4. Após iniciar o json-server, execute `npm run dev` para iniciar a aplicação.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+<br>
+Este projeto foi desenvolvido por Yago Böhm da Cruz com o objetivo de realizar o teste técnico em Front-end da Be, sendo destinado exclusivamente para fins de estudo e avaliação.
