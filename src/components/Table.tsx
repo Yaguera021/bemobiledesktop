@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { fetchEmployees } from "../services/api";
 import { Employees } from "../interface/Employees";
+import { renderEmployeeRows } from "../utils/renderEmployees";
 
 import "./styles/Table.scss";
+import SearchBar from "./SearchBar";
 
 export default function Table() {
   const [allEmployees, setAllEmployees] = useState<Employees[]>([]);
+  const [filteredEmployees, setFilteredEmployees] = useState<Employees[]>([]);
 
   useEffect(() => {
     const getEmployees = async () => {
@@ -25,6 +28,13 @@ export default function Table() {
 
   return (
     <div>
+      <div className='top-wrapper'>
+        <h4>Funcionários</h4>
+        <SearchBar
+          employees={allEmployees}
+          setFilteredEmployees={setFilteredEmployees}
+        />
+      </div>
       <table>
         <thead>
           <tr>
@@ -34,19 +44,9 @@ export default function Table() {
           </tr>
         </thead>
         <tbody>
-          {allEmployees.map((employee, index) => (
-            <tr key={index}>
-              <td>
-                <img src={employee.image} alt={employee.name} />
-              </td>
-              <td>
-                <h3>{employee.name}</h3>
-              </td>
-              <td>{employee.job}</td>
-              <td>{employee.admission_date}</td>
-              <td>{employee.phone}</td>
-            </tr>
-          ))}
+          {filteredEmployees.length > 0
+            ? renderEmployeeRows(filteredEmployees)
+            : renderEmployeeRows(allEmployees)}
         </tbody>
       </table>
     </div>
